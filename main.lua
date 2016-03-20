@@ -9,7 +9,7 @@ local pingPong = require(__dirname .. '.handlers.ping-pong')
 local test = require(__dirname .. '.handlers.test')
 
 -- Set the allowed users
-local allowedUsers = core.Set{'Ben Staker'}
+local allowedUsers = core.Set({'Ben Staker'})
 
 -- Message handler
 on_msg_receive = function (msg)
