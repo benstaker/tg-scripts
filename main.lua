@@ -1,10 +1,13 @@
 --main.lua
 moduleFolder = "tg-scripts"
-local __dir = moduleFolder
-package.path = '../' .. __dir .. '/?.lua;' .. package.path
+modulePath = '../' .. moduleFolder .. '/?.lua;' .. package.path
+local __dir = moduleFolder .. '.'
+
+-- Set the package path
+package.path = modulePath
 
 -- Load in the core modules
-local core = require('core.core')
+local core = require(__dir .. 'core.core')
 
 -- Message handler
 function on_msg_receive (msg)
