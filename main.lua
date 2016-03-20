@@ -8,8 +8,14 @@ core = require(__dirname .. '_core._core')
 local pingPong = require(__dirname .. '.handlers.ping-pong')
 local test = require(__dirname .. '.handlers.test')
 
+function Set (list)
+    local set = {}
+    for _, l in ipairs(list) do set[l] = true end
+    return set
+end
+
 -- Set the allowed users
-local allowedUsers = core.Set({'Ben Staker'})
+local allowedUsers = Set{'Ben Staker'}
 
 -- Message handler
 on_msg_receive = function (msg)
