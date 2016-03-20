@@ -1,6 +1,4 @@
 --functions.lua
-
--- Module object
 local module = {}
 module.on = {}
 
