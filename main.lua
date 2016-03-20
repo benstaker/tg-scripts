@@ -9,12 +9,18 @@ local pingPong = require(__dirname .. '.handlers.ping-pong')
 local test = require(__dirname .. '.handlers.test')
 
 -- Set the allowed users
+local allowedCommands = Set{'ping', 'test'} -- TODO: Make this dynamic.
 local allowedUsers = Set{'Ben_Staker'}
 
 -- Message handler
 on_msg_receive = function (msg)
     -- TODO: Document this
     if msg.out then
+        return
+    end
+
+    -- Only handle recognised commands
+    if not allowedCommands[msg.text] then
         return
     end
 
