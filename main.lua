@@ -1,8 +1,9 @@
 --main.lua
 moduleFolder = "tg-scripts"
+local __dir = moduleFolder
+package.path = '../' .. __dir .. '.?.lua;' .. package.path
 
 -- Load in the core modules
-package.path = "../?.lua;" .. package.path
 local core = require(moduleFolder .. '.core.core')
 
 -- Message handler
@@ -10,7 +11,7 @@ function on_msg_receive (msg)
   if msg.out then
     return
   end
-  if (msg.text=='ping') then
+  if (msg.text == 'ping') then
     send_msg (msg.from.print_name, 'pong', ok_cb, false)
   end
 end

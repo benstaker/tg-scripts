@@ -1,8 +1,9 @@
 --core.lua
+local __dir = moduleFolder .. '.core'
+package.path = '../' .. __dir .. '.?.lua;' .. package.path
 
 -- Include the core modules
-package.path = "../?.lua;" .. package.path
-local functions = require(moduleFolder .. '.core.functions')
+local functions = require('functions')
 
 -- Attach the core modules
 local module = {}
