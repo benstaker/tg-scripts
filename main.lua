@@ -1,15 +1,15 @@
 --main.lua
-allowedUsers = Set {'Ben Staker'}
 moduleFolder = "tg-scripts"
 package.path = '../' .. moduleFolder .. '/?.lua;' .. package.path
 local __dirname = moduleFolder .. '.'
-
--- Globals
 core = require(__dirname .. '_core._core')
 
 -- Load in the handlers
 local pingPong = require(__dirname .. '.handlers.ping-pong')
 local test = require(__dirname .. '.handlers.test')
+
+-- Set the allowed users
+allowedUsers = core.Set {'Ben Staker'}
 
 -- Message handler
 on_msg_receive = function (msg)

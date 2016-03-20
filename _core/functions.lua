@@ -37,5 +37,14 @@ module.on.binlog_replay_end = function ()
     print('"on_binlog_replay_end()" empty handler...')
 end
 
+-- Set
+module.Set = function (list)
+    local set = {}
+    for _, l in ipairs(list) do
+        set[l] = true
+    end
+    return set
+end
+
 -- Expose the module
 return module
