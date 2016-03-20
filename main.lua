@@ -1,27 +1,9 @@
 --main.lua
+
+-- Global and local variables
 moduleFolder = "tg-scripts"
-modulePath = '../' .. moduleFolder .. '/?.lua;' .. package.path
-local __dir = moduleFolder .. '.'
+package.path = '../' .. moduleFolder .. '/?.lua;' .. package.path
+local __dirname = moduleFolder .. '.'
 
--- Set the package path
-package.path = modulePath
-
--- Load in the core modules
-local core = require(__dir .. 'core.core')
-
--- Message handler
-function on_msg_receive (msg)
-  if msg.out then
-    return
-  end
-  if (msg.text == 'ping') then
-    send_msg (msg.from.print_name, 'pong', ok_cb, false)
-  end
-end
-
--- Attach the dummy functions
-on_our_id = core.functions.on_our_id
-on_secret_chat_created = core.functions.on_secret_chat_created
-on_user_update = core.functions.on_user_update
-on_chat_update = core.functions.on_chat_update
-on_get_difference_end = core.functions.on_get_difference_end
+-- Load in the handlers
+require(__dirname .. '.handlers.ping-pong')
