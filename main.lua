@@ -1,6 +1,6 @@
 --main.lua
 moduleFolder = "tg-scripts"
-package.path = '../' .. moduleFolder .. '/?.lua;' .. '/home/pi/' .. moduleFolder .. '/?.lua;' .. package.path
+package.path = '../' .. moduleFolder .. '/?.lua;' .. '/home/pi/?.lua;' .. package.path
 local __dirname = moduleFolder .. '.'
 core = require(__dirname .. '_core._core')
 
