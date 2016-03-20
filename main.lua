@@ -1,7 +1,9 @@
 --main.lua
+moduleFolder = "tg-scripts"
 
 -- Load in the core modules
-local core = require('home.pi.tg-scripts.core.core')
+package.path = "../?.lua;" .. package.path
+local core = require(moduleFolder .. '.core.core')
 
 -- Message handler
 function on_msg_receive (msg)
