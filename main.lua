@@ -4,7 +4,7 @@ local __dir = moduleFolder
 package.path = '../' .. __dir .. '.?.lua;' .. package.path
 
 -- Load in the core modules
-local core = require(moduleFolder .. '.core.core')
+local core = require('core.core')
 
 -- Message handler
 function on_msg_receive (msg)
