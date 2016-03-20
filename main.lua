@@ -1,8 +1,8 @@
 --main.lua
 
 -- Load in the core modules
-package.path = "?.lua;" .. package.path
-local core = require('core.core')
+local thispath = select('1', ...):match(".+%.") or ""
+local core = require(thispath..'core.core')
 
 -- Message handler
 function on_msg_receive (msg)

@@ -1,8 +1,8 @@
 --core.lua
 
 -- Include the core modules
-package.path = "?.lua;" .. package.path
-local functions = require('core.functions')
+local thispath = select('1', ...):match(".+%.") or ""
+local functions = require(thispath..'functions')
 
 -- Attach the core modules
 local core = {}
