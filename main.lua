@@ -1,7 +1,7 @@
 --main.lua
 
 -- Load in the core modules
-package.path = "../?.lua;" .. package.path
+package.path = "?.lua;" .. package.path
 local core = require('core.core')
 
 -- Message handler
