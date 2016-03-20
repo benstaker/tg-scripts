@@ -1,8 +1,8 @@
 --main.lua
 
 -- Load in the core modules
-local __dir = (...):match("(.-)[^%.]+$")
-local core = require(__dir .. 'core.core')
+--local __dir = (...):match("(.-)[^%.]+$")
+local core = require('core.core')
 
 -- Message handler
 function on_msg_receive (msg)

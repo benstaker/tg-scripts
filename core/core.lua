@@ -1,8 +1,8 @@
 --core.lua
 
 -- Include the core modules
-local __dir = (...):match("(.-)[^%.]+$")
-local functions = require(__dir .. 'functions')
+--local __dir = (...):match("(.-)[^%.]+$")
+local functions = require('core.functions')
 
 -- Attach the core modules
 local core = {}
