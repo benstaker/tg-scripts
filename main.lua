@@ -7,6 +7,7 @@ core = require(__dirname .. '_core._core')
 
 -- Load in the handlers
 local pingPong = require(__dirname .. '.handlers.ping-pong')
+local system = require(__dirname .. '.handlers.system')
 local test = require(__dirname .. '.handlers.test')
 
 -- Set the allowed users
@@ -34,6 +35,7 @@ on_msg_receive = function (msg)
 
     -- Attach the handlers
     pingPong.handle(msg)
+    system.handle(msg)
     test.handle(msg)
 end
 
