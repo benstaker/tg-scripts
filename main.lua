@@ -1,4 +1,5 @@
 --main.lua
+allowedUsers = Set {'Ben Staker'}
 moduleFolder = "tg-scripts"
 package.path = '../' .. moduleFolder .. '/?.lua;' .. package.path
 local __dirname = moduleFolder .. '.'
@@ -14,6 +15,13 @@ local test = require(__dirname .. '.handlers.test')
 on_msg_receive = function (msg)
     -- TODO: Document this
     if msg.out then
+        return
+    end
+
+    -- Prevent unauthorised users from sending commands
+    if not allowedUsers[msg.from.print_name] then
+        print('"on_msg_receive()" ' .. msg.from.print_name .. ' does not have access')
+        send_msg (msg.from.print_name, 'sorry you do not have access', ok_cb, false)
         return
     end
 
