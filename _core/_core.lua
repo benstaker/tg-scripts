@@ -1,6 +1,6 @@
 --core.lua
 local module = {}
-local __dirname = moduleFolder .. '.handlers._core.'
+local __dirname = moduleFolder .. '._core.'
 
 -- Attach the core modules
 local functions = require(__dirname .. 'functions')
