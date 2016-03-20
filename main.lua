@@ -1,8 +1,7 @@
 --main.lua
 
 -- Load in the core modules
-local thispath = select('1', ...):match(".+%.") or ""
-local core = require(thispath..'core.core')
+local core = require('home.pi.tg-scripts.core.core')
 
 -- Message handler
 function on_msg_receive (msg)

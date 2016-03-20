@@ -1,42 +1,42 @@
 --functions.lua
 
--- Store the functions
-local functions = {}
+-- Module object
+local module = {}
 
 -- TODO: Document this function
-functions.on_msg_receive = function (id)
+function module.on_msg_receive (id)
 
 end
 
 -- TODO: Document this function
-functions.on_our_id = function (id)
+function module.on_our_id (id)
 
 end
 
 -- TODO: Document this function
-functions.on_secret_chat_created = function (peer)
+function module.on_secret_chat_created (peer)
 
 end
 
 -- TODO: Document this function
-functions.on_user_update = function (user)
+function module.on_user_update (user)
 
 end
 
 -- TODO: Document this function
-functions.on_chat_update = function (user)
+function module.on_chat_update (user)
 
 end
 
 -- TODO: Document this function
-functions.on_get_difference_end = function ()
+function module.on_get_difference_end ()
 
 end
 
 -- TODO: Document this function
-functions.on_binlog_replay_end = function ()
+function module.on_binlog_replay_end ()
 
 end
 
--- Expose functions
-return functions
+-- Expose the module
+return module
