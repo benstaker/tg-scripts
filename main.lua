@@ -1,3 +1,9 @@
+--main.lua
+
+-- Load in the core modules
+local core = require('core.core')
+
+-- Message handler
 function on_msg_receive (msg)
   if msg.out then
     return
@@ -7,20 +13,9 @@ function on_msg_receive (msg)
   end
 end
 
-function on_our_id (id)
-end
-
-function on_secret_chat_created (peer)
-end
-
-function on_user_update (user)
-end
-
-function on_chat_update (user)
-end
-
-function on_get_difference_end ()
-end
-
-function on_binlog_replay_end ()
-end
+-- Attach the dummy functions
+on_our_id = core.functions.on_our_id
+on_secret_chat_created = core.functions.on_secret_chat_created
+on_user_update = core.functions.on_user_update
+on_chat_update = core.functions.on_chat_update
+on_get_difference_end = core.functions.on_get_difference_end
