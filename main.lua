@@ -9,7 +9,7 @@ local pingPong = require(__dirname .. '.handlers.ping-pong')
 local test = require(__dirname .. '.handlers.test')
 
 -- Set the allowed users
-allowedUsers = core.Set {'Ben Staker'}
+allowedUsers = core.Set({'Ben Staker'})
 
 -- Message handler
 on_msg_receive = function (msg)
@@ -19,7 +19,7 @@ on_msg_receive = function (msg)
     end
 
     -- Prevent unauthorised users from sending commands
-    if not allowedUsers[msg.from.print_name] then
+    if not allowedUsers[msg.from.print_name] ~= nil then
         print('"on_msg_receive()" ' .. msg.from.print_name .. ' does not have access')
         send_msg (msg.from.print_name, 'sorry you do not have access', ok_cb, false)
         return
