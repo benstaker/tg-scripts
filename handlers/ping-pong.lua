@@ -1,4 +1,4 @@
---test.lua
+--ping-pong.lua
 local module = {}
 
 -- Message handler
